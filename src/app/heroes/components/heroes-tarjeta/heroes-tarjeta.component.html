@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ h.superhero}}</mat-card-title>
+        <mat-card-subtitle>{{ h.alter_ego}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="h | imagen" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <h3> {{h.publisher}}</h3>
+        <p>
+            <strong>Primera aparicion: {{ h.first_appearance}}</strong>
+            <br>
+            <strong>Personajes: {{ h.characters}}</strong>
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="warn" [routerLink]="['/heroes', h.id]">Leer más...</button>
+        <button mat-button color="info" [routerLink]="['/heroes/editar', h.id]">Editar</button>
+    </mat-card-actions>
+</mat-card>
